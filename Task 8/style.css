@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0f0f1a; /* Dark Navy Background */
+    overflow: hidden;
+}
+
+/* Background Glow Animation */
+body::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(#00d2ff, #9d00ff);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    animation: moveGlow 6s infinite alternate;
+}
+
+@keyframes moveGlow {
+    0% { transform: translate(-100px, -100px); }
+    100% { transform: translate(100px, 100px); }
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); /* Glass Effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 5px 15px;
+}
+
+.search-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.search-box button {
+    background: #00d2ff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: #0f0f1a;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #fff;
+    box-shadow: 0 0 10px #00d2ff;
+}
+
+.search-box i.fa-location-dot {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Weather Info */
+.weather-box img {
+    width: 60%;
+    filter: drop-shadow(0 0 10px #00d2ff); /* Neon glow on icon */
+}
+
+.temperature {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.description {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.weather-details .detail {
+    display: flex;
+    align-items: center;
+}
+
+.weather-details i {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.text span {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text p {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Error State */
+.not-found {
+    display: none;
+    font-size: 22px;
+    color: #ff4d4d;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+

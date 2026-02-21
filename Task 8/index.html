@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Weather | TechnoHacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="card glass">
+        <div class="search-box">
+            <i class="fas fa-location-dot"></i>
+            <input type="text" id="city-input" placeholder="Enter City Name...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="weather-box">
+            <img src="https://openweathermap.org/img/wn/04d@4x.png" alt="weather-icon" id="weather-icon">
+            <p class="temperature" id="temp">--°c</p>
+            <p class="description" id="desc">Weather Status</p>
+        </div>
+
+        <div class="weather-details">
+            <div class="detail">
+                <i class="fas fa-water"></i>
+                <div class="text">
+                    <span id="humidity">--%</span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="detail">
+                <i class="fas fa-wind"></i>
+                <div class="text">
+                    <span id="wind">-- km/h</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found">
+            <p>😕 City not found!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
